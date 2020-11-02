@@ -12,8 +12,8 @@ try:
 
 		#insert dummy data 
 
-		c.execute('INSERT INTO tasks(name,due_date,priority,status) VALUES("Finish this tutorial","11/05/2020", 10, 1)') #status 1 means open 
-		c.execute('INSERT INTO tasks(name,due_date,priority,status) VALUES("Finish Real Python Course 2","11/05/2020", 10, 1)') 
+		c.execute('INSERT INTO tasks (name,due_date,priority,status) VALUES("Finish this tutorial","11/05/2020", 10, 1)') #status 1 means open 
+		c.execute('INSERT INTO tasks (name,due_date,priority,status) VALUES("Finish Real Python Course 2","11/05/2020", 10, 1)') 
 except sqlite3.OperationalError as oe:
 	print("An error occured : {}".format(oe))
 

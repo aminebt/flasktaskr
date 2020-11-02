@@ -29,18 +29,18 @@ def login():
 			return render_template('login.html', error=error), status_code
 		else:
 			session['logged_in'] = True 
-			flash('Welcome')
-			return url_for('tasks')
+			flash('Welcome! you are logged in')
+			return redirect(url_for('tasks'))
 	return render_template('login.html', error=error), status_code
 
 @app.route('/logout')
 def logout():
 	session.pop('logged_in')
 	flash("You've been logged out")
-	return render_template('login.html')
+	return redirect(url_for('login'))
 
 
 @app.route('/main')
 @login_required 
 def tasks():
-	pass
+	return '<h1> This is the tasks placeholder page </h1>'
